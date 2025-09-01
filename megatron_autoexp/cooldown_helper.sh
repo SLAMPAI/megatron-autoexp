@@ -21,7 +21,7 @@ path_out=$(find "${LOGS}/${EXP_NAME}/checkpoints" -maxdepth 1 -type d -name "ite
 
 # Check if a matching directory was found and create the symlink.
 if [[ -n "$path_out" ]]; then
-  sleep 60
+  sleep 5
   mkdir -p "${LOGS}/${EXP_NAME}/cooldown_s${CD_SCALE}/checkpoints"
   ln -s "$path_out" "${LOGS}/${EXP_NAME}/cooldown_s${CD_SCALE}/checkpoints/"
   echo "$ITER" > "${LOGS}/${EXP_NAME}/cooldown_s${CD_SCALE}/checkpoints/latest_checkpointed_iteration.txt"
